@@ -16,5 +16,13 @@ public enum Item {
 		
 		this.img = new Image(img);
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public Image getImg() {
+		return img;
+	}
 
 }

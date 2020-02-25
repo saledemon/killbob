@@ -1,7 +1,6 @@
 package stuff.useful;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Inventory extends ArrayList<ItemCounter> {
 
@@ -16,21 +15,30 @@ public class Inventory extends ArrayList<ItemCounter> {
 	}
 	
 	@Override
-	public int indexOf(ItemCounter o) {
-		
-		
+	public int indexOf(Object o) {
+		if(o instanceof Item) {
+			for (int i = 0; i < this.size() ; i++) {
+				if (get(i).getItem().equals(o)) {
+					return i;
+				}
+			}
+		}
 		return super.indexOf(o);
 	}
 	
-	public void stack(Item item, int number) {
-		int index = items.inde
+	public void pick(Item item, int number) {
+		int index = indexOf(item);
+		if(index > 0) get(index).stack(number);
+		else {
+			add(new ItemCounter(number, item));
+		}
+		
 	}
 
 	public void pick(ItemCounter... item) {
-	
 		for(ItemCounter i : item) {
 			if (contains(i)) {
-				stack(i.getItem(), i.getNumber());
+				pick(i.getItem(), i.getNumber());
 			} else {
 				add(i);
 			}

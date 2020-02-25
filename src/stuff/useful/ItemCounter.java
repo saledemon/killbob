@@ -54,7 +54,7 @@ public class ItemCounter {
 		if (obj instanceof ItemCounter) {
 			return item.equals(((ItemCounter)obj).getItem());
 		}
-		return false;
+		return super.equals(obj);
 	}
 
 	public int getNumber() {
