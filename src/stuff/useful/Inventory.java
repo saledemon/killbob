@@ -7,9 +7,8 @@ public class Inventory extends ArrayList<ItemCounter> {
 	private static final long serialVersionUID = 1L;
 	
 	
-	/**
-	 * TODO Make inventory load from save file.
-	 */
+	 // TODO Make inventory load from save file.
+	 
 	public Inventory() {
 		
 	}
@@ -46,3 +45,5 @@ public class Inventory extends ArrayList<ItemCounter> {
 	}
 
 }
+
+//because there should be 50 lines rather than 49

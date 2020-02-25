@@ -28,22 +28,13 @@ public class ItemCounter {
 		drop(number);
 	}
 	
-	public void dropOne() {
-		drop(1);
-	}
-	
 	public void drop(int number) {
-		number -= number;
-	}
-	
-	public void stackOne() {
-		stack(1);
+		this.number -= number;
 	}
 	
 	public void stack(int number) {
-		number += number;
+		this.number += number;
 	}
-	
 	
 	public Item getItem() {
 		return item;
