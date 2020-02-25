@@ -4,16 +4,15 @@ import javafx.scene.image.Image;
 
 public enum Item {
 	
-	BURGER("burger", "images/hamberger.jpg"),
-	FISH("fish", "images/fish.png"),
-	BALLOON("balloon", "images/ballon.png");
+	BURGER("burger", "hamberger.jpg"),
+	FISH("fish", "fish.png"),
+	BALLOON("balloon", "balloon.png");
 	
 	private String name;
 	private Image img;
 	
 	private Item(String name, String img) {
 		this.name = name;
-		
 		this.img = new Image(img);
 	}
 	
@@ -21,7 +20,7 @@ public enum Item {
 		return name;
 	}
 
-	public Image getImg() {
+	public Image getImage() {
 		return img;
 	}
 

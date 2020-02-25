@@ -10,7 +10,7 @@ public class ItemCounter {
 	 * @param item
 	 */
 	public ItemCounter(Item item) {
-		this(1, item);
+		this(item, 1);
 	}
 	
 	/**
@@ -19,21 +19,21 @@ public class ItemCounter {
 	 * @param number
 	 * @param item
 	 */
-	public ItemCounter(int number, Item item) {
+	public ItemCounter(Item item, int number) {
 		this.number = number;
 		this.item = item;
 	}
 	
-	public void dropAll() {
-		drop(number);
+	public void unstackAll() {
+		unstack(this.number);
 	}
 	
-	public void drop(int number) {
-		this.number -= number;
+	public int unstack(int number) {
+		return this.number -= number;
 	}
 	
-	public void stack(int number) {
-		this.number += number;
+	public int stack(int number) {
+		return this.number += number;
 	}
 	
 	public Item getItem() {
@@ -50,6 +50,10 @@ public class ItemCounter {
 
 	public int getNumber() {
 		return number;
+	}
+ 
+	public String toString() {
+		return number+"~"+item.getName();
 	}
 	
 }
