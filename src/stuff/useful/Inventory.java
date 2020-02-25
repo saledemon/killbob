@@ -16,8 +16,9 @@ public class Inventory extends ArrayList<ItemCounter> {
 	}
 	
 	@Override
-	public int indexOf(Object o) {
-		// TODO Auto-generated method stub
+	public int indexOf(ItemCounter o) {
+		
+		
 		return super.indexOf(o);
 	}
 	
