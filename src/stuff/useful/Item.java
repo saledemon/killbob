@@ -4,7 +4,9 @@ import javafx.scene.image.Image;
 
 public enum Item {
 	
-	BURGER("burger", "../resources/burger.png");
+	BURGER("burger", "images/hamberger.jpg"),
+	FISH("fish", "images/fish.png"),
+	BALLOON("balloon", "images/ballon.png");
 	
 	private String name;
 	private Image img;
