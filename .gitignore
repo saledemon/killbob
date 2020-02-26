@@ -7,3 +7,6 @@ bin/
 *.log
 subl.py
 target/
+build/
+*.gradle
+.gradle/
