@@ -1,8 +1,14 @@
 package stuff.useful;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class ItemCounter {
 	
-	private int number;
+	private final IntegerProperty number = new SimpleIntegerProperty();
+	private final StringProperty strNumber = new SimpleStringProperty();
 	private Item item;
 	
 	/**
@@ -20,20 +26,22 @@ public class ItemCounter {
 	 * @param item
 	 */
 	public ItemCounter(Item item, int number) {
-		this.number = number;
+		this.number.addListener((obs, oldV, newV) -> strNumber.setValue(""+newV));
+		this.number.setValue(number);
 		this.item = item;
 	}
 	
 	public void unstackAll() {
-		unstack(this.number);
+		unstack(number.getValue());
 	}
 	
 	public int unstack(int number) {
-		return this.number -= number;
+		return stack(-number);
 	}
 	
 	public int stack(int number) {
-		return this.number += number;
+		this.number.setValue(this.number.getValue() + number);
+		return this.number.getValue();
 	}
 	
 	public Item getItem() {
@@ -49,11 +57,15 @@ public class ItemCounter {
 	}
 
 	public int getNumber() {
-		return number;
+		return number.getValue();
 	}
  
 	public String toString() {
-		return number+"~"+item.getName();
+		return number.getValue()+"~"+item.getName();
+	}
+
+	public StringProperty numberProperty(){
+		return strNumber;
 	}
 	
 }

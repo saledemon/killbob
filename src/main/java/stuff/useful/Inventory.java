@@ -57,6 +57,9 @@ public class Inventory {
 		return items;
 	}
 
-}
+	@Override
+	public String toString() {
+		return items.toString();
+	}
 
-//because there should be 50 lines rather than 49
+}
