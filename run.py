@@ -9,4 +9,6 @@ jar=f'java -jar {path}/target/killbob.jar'
 os.system(mvn)
 os.system(clean_log)
 os.system(jar)
+<<<<<<< HEAD
 kJSHDBVKAJHSDBVmmclmlaks
+kJSHDBVKAJHSDBVjahebvjahdbvjahbdfv
