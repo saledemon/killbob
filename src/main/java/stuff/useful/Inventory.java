@@ -5,6 +5,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+
 public class Inventory {
 
 	private static final long serialVersionUID = 1L;
@@ -14,7 +15,8 @@ public class Inventory {
 	
 	 // TODO Make inventory load from save file.
 	 
-	public Inventory() {}
+	public Inventory() {
+	}
 	
 	public int indexOf(Item o) {
 		int idx = -1;
