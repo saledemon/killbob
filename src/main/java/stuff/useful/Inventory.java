@@ -5,7 +5,6 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
 public class Inventory {
 
 	private static final long serialVersionUID = 1L;
@@ -16,6 +15,7 @@ public class Inventory {
 	 // TODO Make inventory load from save file.
 	 
 	public Inventory() {
+		
 	}
 	
 	public int indexOf(Item o) {
@@ -38,16 +38,19 @@ public class Inventory {
 	}
 
 	/**
-	* If item is not contained in inventory, simply ignores the drop request.
+	* If item is not contained in inventory, returns false.
 	*/
-	public void drop(Item item, int number) {
+	public boolean drop(Item item, int number) {
+		boolean dropped = false;
 		int index = indexOf(item);
 		if(index >= 0){
 			int numberLeft = items.get(index).unstack(number);
 			if (numberLeft <= 0) {
 				items.remove(index);
 			}
+			dropped = true;
 		}
+		return dropped;
 	}
 
 	private void stretchInventory(ItemCounter item) {

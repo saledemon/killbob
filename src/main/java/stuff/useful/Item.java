@@ -6,6 +6,7 @@ public enum Item {
 	
 	BURGER("burger", "hamberger.jpg"),
 	FISH("fish", "fish.png"),
+	LAKE("lake", "hell.jptamere"),
 	BALLOON("balloon", "balloon.png");
 	
 	private String name;
@@ -22,6 +23,11 @@ public enum Item {
 
 	public Image getImage() {
 		return img;
+	}
+
+	@Override
+	public String toString(){
+		return name;
 	}
 
 }

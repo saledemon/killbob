@@ -8,28 +8,38 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Priority;
+import javafx.geometry.Point2D;
+
+import stuff.deed.*;
+
 
 public class MainWindow extends Application {
+
+	private Player player = new Player(); // TODO -> Init player form file
+	private UIController controller = new UIController(this);
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-			Inventory inv = new Inventory();
-			inv.pick(Item.BURGER, 2);
-			inv.pick(Item.FISH, 5);
-			inv.pick(Item.BURGER, 4);
+
+			player.pick(Item.BURGER, 2);
+			player.pick(Item.FISH, 5);
+			player.pick(Item.BURGER, 4);
 			
+			Button throwBut = new Button("Throw Balloon");
+			throwBut.setOnAction(e -> controller.execute(new ThrowCmdDeed(Item.BALLOON, Item.LAKE)));
+
 			Button but = new Button("Add Balloon");
-			but.setOnAction(e -> inv.pick(Item.BALLOON, 1));
+			but.setOnAction(e -> player.pick(Item.BALLOON, 1));
 
 			Button but1 = new Button("Remove Burger");
-			but1.setOnAction(e -> inv.drop(Item.BURGER, 1));
+			but1.setOnAction(e -> player.drop(Item.BURGER, 1));
 
 			TextArea area = new TextArea("Hello");
 			area.setPrefHeight(300);
-			InventoryView view = new InventoryView(inv.getItems());
+			InventoryView view = new InventoryView(player.getItems());
 			VBox root = new VBox(10);
 			root.setFillWidth(true);
-			root.getChildren().addAll(but, but1, area, view);
+			root.getChildren().addAll(but, but1, throwBut, area, view);
 			VBox.setVgrow(area, Priority.ALWAYS);
 
 			
@@ -39,4 +49,8 @@ public class MainWindow extends Application {
 			primaryStage.show();
 	}
 
+
+	public Player getPlayer(){
+		return player;
+	}
 }

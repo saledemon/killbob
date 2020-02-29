@@ -1,11 +1,11 @@
 package stuff.useful;
 
-public class Player {
-	
-	private Inventory inventory;
-	
-	public Player() {
-		inventory = new Inventory();
+public class Player extends Inventory {
+
+	private BobScene currentBobScene = new BobScene();
+
+	public BobScene getBobScene(){
+		return currentBobScene;
 	}
 
 }

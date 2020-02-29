@@ -1,12 +1,32 @@
 #! /usr/bin/env python
 import os
-path='/Users/Yanou/Documents/workspace/KillBob'
-pom=f'{path}/pom.xml'
-log=f'{path}/mvn.log'
-mvn=f'(mvn -f {pom} clean ; mvn -f {pom} package)  > {path}/mvn.log'
-clean_log=f'(tail -n +$(grep -n "BUILD FAILURE" {log} | cut -d: -f1) {log} ; echo "\n======================\n")'
-jar=f'java -jar {path}/target/killbob.jar'
-os.system(mvn)
-os.system(clean_log)
-os.system(jar)
+import sys
 
+path=sys.path[0]
+
+to_trim = ""
+log=f'{path}/mvn.log'
+pom=f'{path}/pom.xml'
+jar=f'{path}/target/killbob.jar'
+
+def pathToTrim():
+	global to_trim
+	src_path=f'{path}/src/main/java/'
+	previous = 0
+	for idx, s in enumerate(src_path):
+		if s == "/":
+			to_trim += src_path[previous:idx] + '\\/'
+			previous=idx+1
+
+def execute():
+	pathToTrim()
+
+	mvn=f'(mvn -f {pom} clean ; mvn -f {pom} package) > {log}'
+	build_fail=f'(grep \'\.java\' {log}  | grep -Fv \'INFO\' | sort | uniq | sed \'s/{to_trim}//\' ; echo "\n============\n")'
+	jarx=f'java -jar {jar}'
+
+	os.system(mvn)
+	os.system(build_fail)
+	os.system(jarx)
+
+execute()
