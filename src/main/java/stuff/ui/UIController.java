@@ -1,12 +1,17 @@
-package stuff.useful;
+package stuff.ui;
 
 import stuff.deed.Deed;
 import stuff.exception.BufferException;
+import stuff.useful.BobScene;
+import stuff.useful.Player;
+
 import java.lang.NullPointerException;
 
 public class UIController {
 	
 	private MainWindow window;
+
+	//Put into the line tracker
 	private Deed buffer = null; //encapsulate in a class in order to make a multi-deed buffer FIFO
 
 	public UIController(MainWindow window){

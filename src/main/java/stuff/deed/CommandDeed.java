@@ -1,7 +1,7 @@
 package stuff.deed;
 
-import stuff.useful.UIController;
 import stuff.exception.CommandException;
+import stuff.ui.UIController;
 
 public abstract class CommandDeed implements Deed {
 	

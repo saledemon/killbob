@@ -1,7 +1,7 @@
 package stuff.deed;
 
-import stuff.useful.UIController;
 import stuff.exception.BufferException;
+import stuff.ui.UIController;
 
 public abstract class CommonDeed implements Deed {
 	

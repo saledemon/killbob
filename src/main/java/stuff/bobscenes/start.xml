@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<line text="Hello Dear!">
+		<answer text="Hello there.">
+			<line text="What are you up to today ?">
+				<answer text="Just washing the dishes">
+					<line text="Well, let's see to that.">
+						<answer text="Don't come">
+							<line text="Oh, but I'll be there. Believe me." deed="switchToKitchen"/>
+						</answer>
+					</line>
+				</answer>
+			</line>
+		</answer>
+		<answer text="Who the fuck are you ?"/>
+		<answer text="I ain't here to talk."/>
+	</line>
+
+	<line text="You suck... sadly.">
+		<answer text="Hey, you treat me like I deserve to."/>
+		<answer text="But..."/>
+	</line>
+
+	<line text="I am an emperor, what are you ?">
+		<answer text="I am the king of emperors, what are you ?"/>
+		<answer text="Nobody... I come here in total humility.">
+			<line text="Well, you are a fool to have come this way."/>
+		</answer>
+	</line>
+</root>
+

@@ -9,12 +9,13 @@ public enum Item {
 	LAKE("lake", "hell.jptamere"),
 	BALLOON("balloon", "balloon.png");
 	
+	private String path = "src/main/resources/";
 	private String name;
 	private Image img;
 	
 	private Item(String name, String img) {
 		this.name = name;
-		this.img = new Image(img);
+		this.img = new Image(path+img);
 	}
 	
 	public String getName() {

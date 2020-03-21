@@ -1,6 +1,7 @@
 package stuff.useful;
 
 import javafx.application.Application;
+import stuff.ui.MainWindow;
 
 public class Main  {
 	

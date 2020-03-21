@@ -1,7 +1,10 @@
-package stuff.useful;
+package stuff.ui;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import stuff.useful.Inventory;
+import stuff.useful.Item;
+import stuff.useful.ItemCounter;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import javafx.scene.Node;

@@ -1,4 +1,4 @@
-package stuff.useful;
+package stuff.ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,6 +11,8 @@ import javafx.scene.layout.Priority;
 import javafx.geometry.Point2D;
 
 import stuff.deed.*;
+import stuff.useful.Item;
+import stuff.useful.Player;
 
 
 public class MainWindow extends Application {

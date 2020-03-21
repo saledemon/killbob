@@ -1,11 +1,22 @@
 package stuff.useful;
 
 import javafx.geometry.Point2D;
+import stuff.deed.LineDeed;
 
 public class BobScene {
+
+	private Root root = new Root();
+	private BobSceneLoader loader;
 	
+	//for fun test purpouses
+	protected LineDeed switchToKitchen = new LineDeed("You have successfully switched to kitchen.");
 
+	public BobScene(String xml) {
+		loader = new BobSceneLoader(this, xml);
+		this.root = loader.parseXml();
+	}
 
+	
 
 	public void addItem(Item added, Item on){
 		addItem(added, coords(on));
@@ -21,5 +32,8 @@ public class BobScene {
 		return new Point2D(0, 0);
 	}
 	
-
+	public Root getRoot() {
+		return root;
+	}
+	
 }

@@ -1,6 +1,6 @@
 package stuff.deed;
 
-import stuff.useful.UIController;
+import stuff.ui.UIController;
 
 public interface Deed {
 
